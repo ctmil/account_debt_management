@@ -393,10 +393,10 @@ class AccountDebtLine(models.Model):
                 self.payment_group_id.id,
                 _('View Payment Group'), False]
         if self.invoice_id:
-            view_id = self.invoice_id.get_formview_id()
+            view_id = self.move_id.get_formview_id()
             return [
-                'account.invoice',
-                self.invoice_id.id,
+                'account.move',
+                self.move_id.id,
                 _('View Invoice'),
                 view_id]
         # TODO ver si implementamos que pasa cuando hay mas de un move
